@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <div class="centered">
+      <img src="https://icons.wxug.com/i/c/v4/chancetstorms.svg" style="width:600px;height:480px;"/>
+    </div>
     <script src="apiKey.js"></script>
     <script src='index.js'></script>
   </head>
@@ -11,7 +15,15 @@
     <div id='main'></div>
     <div id='name'></div>
 
-   
+
+    <button>Choose ℉ / ℃</button>
+    <button>Search for City</button>
+    <!-- <button>Find Your location</button> -->
+    
+    <p id="button-result"></p>
+
+   <input type="text" />
+   <p id="search-result">Enter a city to search.</p>
   
   </body>
 </html>

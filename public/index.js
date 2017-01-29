@@ -11,12 +11,17 @@ var url = "http://api.openweathermap.org/data/2.5/weather?q=Edinburgh,uk&appid="
 
 // var displayData = function() {
 //   var ul document.createElement('ul');
+//   ul.innerHTML = 'main' + data.main.humidity;
+//   mainList.appendChild('li');
+
 //   var li document.createElement('li');
 
-//}
+
+// }
 
 var populateList = function(data) {
   var mainListDiv = document.querySelector('#main');
+  // var mainListDiv = document.querySelector('#wind');
   var mainList = document.createElement('ul');
  
   var humidity = document.createElement('li');
@@ -29,13 +34,40 @@ var populateList = function(data) {
   mainList.appendChild(pressure);
   mainListDiv.appendChild(mainList);
 
+  var wind = document.createElement('li');
+  wind.innerText = "Wind (Km/h) = " + data.wind;
+  mainList.appendChild(wind);
+  mainListDiv.appendChild(mainList);
+
   var temperature = document.createElement('li');
-  temperature.innerText = "Temperature (Celsius) = " + (data.main.temp - 273);
+  temperature.innerText = "Temperature ℃ = " + (data.main.temp  - 273.15);
+  
   mainList.appendChild(temperature);
   mainListDiv.appendChild(mainList);
 
 
 }
+
+
+var handleButtonClick = function(event){
+
+  var buttonResult = document.querySelector('#button-result');
+  buttonResult.innerHTML =  
+  console.log(event);
+}
+
+
+var app = function(){
+  var button = document.querySelector('button');
+  button.onclick = handleButtonClick;
+
+  var input = document.querySelector('input');
+  input.onkeyup = handleKeyPress;
+
+  var select = document.querySelector('select');
+  select.onchange = handleSelectChange;
+}
+
 
 
 window.onload = function(){
