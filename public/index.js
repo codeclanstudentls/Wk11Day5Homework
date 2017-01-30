@@ -35,12 +35,12 @@ var populateList = function(data) {
   mainListDiv.appendChild(mainList);
 
   var wind = document.createElement('li');
-  wind.innerText = "Wind (Km/h) = " + data.wind;
+  wind.innerText = "Wind (mph) = " + data.wind.speed;
   mainList.appendChild(wind);
   mainListDiv.appendChild(mainList);
 
   var temperature = document.createElement('li');
-  temperature.innerText = "Temperature ℃ = " + (data.main.temp  - 273.15);
+  temperature.innerText = "Temperature ℃ = " + Math.ceil(data.main.temp  - 273.15);
   
   mainList.appendChild(temperature);
   mainListDiv.appendChild(mainList);
@@ -49,12 +49,24 @@ var populateList = function(data) {
 }
 
 
-var handleButtonClick = function(event){
+// var handleButtonClick = function(event){
 
-  var buttonResult = document.querySelector('#button-result');
-  buttonResult.innerHTML =  
-  console.log(event);
-}
+//   var buttonResult = document.querySelector('#button-result');
+//   buttonResult.innerHTML =  
+//   console.log(event);
+// }
+
+// var searchButton = document.querySelector('button');
+//   var url = 'http://openweathermap.org/'
+//   button.onclick = function(){
+//       makeRequest(url, requestComplete);
+
+// }
+
+// var tempSelectButton = document.querySelector('button');
+//   button.onclick = function(){
+
+//   }
 
 
 var app = function(){
